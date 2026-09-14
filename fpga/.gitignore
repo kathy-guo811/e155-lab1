@@ -1,0 +1,14 @@
+impl*/
+*.dir/
+.build_status
+.run_manager.ini
+.recovery
+.spread_sheet.ini
+.spreadsheet_view.ini
+*.log
+*.html
+*.xml
+*.ccl
+*.srp
+*.dmp
+._Real_._Math_.vhd
