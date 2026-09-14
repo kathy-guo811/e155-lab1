@@ -8,6 +8,7 @@ impl*/
 *.log
 *.html
 *.xml
+*.pfl
 *.ccl
 *.srp
 *.dmp
