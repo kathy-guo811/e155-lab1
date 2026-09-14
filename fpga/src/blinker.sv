@@ -27,5 +27,5 @@ module blinker #(
 			counter <= counter;
 	end
 
-	assign led = counter[22];
+	assign led = counter[width];
 endmodule
