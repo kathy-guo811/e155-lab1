@@ -5,7 +5,7 @@
 
 
 module blinker #(
-	parameter width = 23,
+	parameter width = 24,
 	parameter max_count = 24'd10000000)
    (input logic clk,
 	input logic reset,
@@ -13,19 +13,21 @@ module blinker #(
 	output logic led
 );
 
-	logic [width:0] counter;
-
+	logic [width-1:0] counter;
+	logic toggle;
+	
 	always_ff @(posedge clk) begin
 		if (reset == 0)
 			counter <= 0;
-		else if (enable)
+			toggle = 0;
+		else if (enable) begin
 			if (counter == max_count)
 				counter <= 0;
+				toggle = 1;
 			else
 				counter <= counter + 1;
-		else
-			counter <= counter;
+		end
 	end
 
-	assign led = counter[width];
+	assign led = toggle;
 endmodule
